@@ -6,5 +6,6 @@ import com.sakayta.komsai.Entity.BusEntity;
 
 @Repository
 public interface BusRepository extends JpaRepository<BusEntity, Integer>{
-	
+	//user-defined query
+	BusEntity findByBusNumber(String busNumber);
 }
