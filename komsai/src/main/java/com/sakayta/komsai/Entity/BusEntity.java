@@ -10,30 +10,30 @@ public class BusEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int busid;
-	private int busnumber;
-	private int busseats;
-	private String buscompany;
+	private int busId;
+	private int busNumber;
+	private int busSeats;
+	private String busCompany;
 	
 	public int getBusId() {
-		return busid;
+		return busId;
 	}
 	public int getBusNumber() {
-		return busnumber;
+		return busNumber;
 	}
-	public void setBusNumber(int busnumber) {
-		this.busnumber = busnumber;
+	public void setBusNumber(int busNumber) {
+		this.busNumber = busNumber;
 	}
 	public int getBusSeats() {
-		return busseats;
+		return busSeats;
 	}
-	public void setBusSeats(int busseats) {
-		this.busseats = busseats;
+	public void setBusSeats(int busSeats) {
+		this.busSeats = busSeats;
 	}
 	public String getBusCompany() {
-		return buscompany;
+		return busCompany;
 	}
-	public void setBusCompany(String buscompany) {
-		this.buscompany = buscompany;
+	public void setBusCompany(String busCompany) {
+		this.busCompany = busCompany;
 	}
 }
