@@ -4,7 +4,9 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -46,10 +48,14 @@ public class ScheduleController {
 	}
 	
 	// Update
-	@PutMapping("/putReservation")
+	@PutMapping("/putSchedule")
 	public ScheduleEntity updateSchedule(@RequestParam int scheduleId, @RequestBody ScheduleEntity newScheduleDetails) throws Exception {
 		return schedService.updateSchedule(scheduleId, newScheduleDetails);
 	}
-	// Delete
 	
+	// Delete
+	@DeleteMapping("/deleteSchedule/{id}")
+	public String deleteSchedule(@PathVariable int id) {
+		return schedService.deleteSchedule(id);
+	}
 }
