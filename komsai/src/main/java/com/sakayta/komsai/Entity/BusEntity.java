@@ -10,7 +10,7 @@ public class BusEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int busId;
+	private int busid;
 	private int busSeats;
 	private String busCompany;
 	private String numberCompanyBus;
@@ -18,17 +18,17 @@ public class BusEntity {
 	
 	public BusEntity() {}
 
-	public BusEntity(int busId, int busSeats, String busCompany, String numberCompanyBus, String destination) {
+	public BusEntity(int busid, int busSeats, String busCompany, String numberCompanyBus, String destination) {
 		super();
-		this.busId = busId;
+		this.busid = busid;
 		this.busSeats = busSeats;
 		this.busCompany = busCompany;
 		this.numberCompanyBus = numberCompanyBus;
 		this.destination = destination;
 	}
 
-	public int getBusId() {
-		return busId;
+	public int getBusid() {
+		return busid;
 	}
 
 	public int getBusSeats() {

@@ -44,12 +44,12 @@ public class BusController {
 	}
 	
 	@PutMapping("/putBus")
-	public BusEntity putCourse(@RequestParam int busId, @RequestBody BusEntity newBusEntity) throws Exception{
-		return bservice.putBus(busId, newBusEntity);
+	public BusEntity putCourse(@RequestParam int busid, @RequestBody BusEntity newBusEntity) throws Exception{
+		return bservice.putBus(busid, newBusEntity);
 	}
 	
-	@DeleteMapping("/deleteBus/{busId}")
-	public String deleteCourse(@PathVariable int busId) {
-		return bservice.deleteBus(busId);
+	@DeleteMapping("/deleteBus/{busid}")
+	public String deleteCourse(@PathVariable int busid) {
+		return bservice.deleteBus(busid);
 	}
 }

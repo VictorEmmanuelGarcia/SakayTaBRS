@@ -61,13 +61,13 @@ public class BusService {
 	}
 	
 	//Delete
-	public String deleteBus(int busId) {
+	public String deleteBus(int busid) {
 		String msg;
-		if(busrepo.findById(busId) != null) {
-			busrepo.deleteById(busId);
-			msg = "Passenger ID Number "+ busId +" is successfully deleted!";
+		if(busrepo.findById(busid) != null) {
+			busrepo.deleteById(busid);
+			msg = "Bus ID"+ busid +" is successfully deleted!";
 		}else {
-			msg = "Passenger ID Number "+ busId +" is NOT found!";
+			msg = "Bus ID "+ busid +" is NOT found!";
 		}
 		return msg;
 	}
