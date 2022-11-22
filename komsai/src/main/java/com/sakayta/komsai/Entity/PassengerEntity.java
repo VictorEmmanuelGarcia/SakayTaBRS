@@ -1,9 +1,13 @@
 package com.sakayta.komsai.Entity;
 
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,10 +24,13 @@ public class PassengerEntity {
 	private String address;
 	private int points;
 	
+	@OneToMany(cascade = CascadeType.MERGE)
+	private Set<ReservationEntity> reservation;
+	
 	public PassengerEntity() {}
 	
 	public PassengerEntity(int passengerId, String firstName, String lastName, String userName, String passWord,
-			String address, int points) {
+			String address, int points, Set<ReservationEntity> reservation) {
 		super();
 		this.passengerId = passengerId;
 		this.firstname = firstName;
@@ -32,6 +39,7 @@ public class PassengerEntity {
 		this.password = passWord;
 		this.address = address;
 		this.points = points;
+		this.reservation = reservation;
 	}
 
 	public int getPassengerId() {
