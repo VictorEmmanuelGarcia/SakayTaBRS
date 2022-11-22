@@ -20,20 +20,20 @@ public class ReservationService {
 		return reserverepo.save(reservation);
 	}
 	
-	//R - Read all records from tbl_
+	//R - Read all records
 	public List<ReservationEntity> getAllReservations(){
 		return reserverepo.findAll();
 	}
 	
-	//R - Read or search a reservation by passenger Id
-	/*public ReservationEntity findByPassengerId(int passengerId) {
-		if(reserverepo.findByPassengerId(passengerId)!=null) {
-			return reserverepo.findByPassengerId(passengerId);
+	//R - Read or search a reservation by date
+	public ReservationEntity findByReservationDate(String date) {
+		if(reserverepo.findByReservationDate(date)!=null) {
+			return reserverepo.findByReservationDate(date);
 		}
 		else {
 			return null;
 		}
-	}*/
+	}
 	
 	//U - Update a reservation
 	public ReservationEntity putReservation(int reservationId , ReservationEntity newReservationDetails) throws Exception{

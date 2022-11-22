@@ -41,11 +41,11 @@ public class ReservationController {
 		return reserveserv.getAllReservations();
 	}
 	
-	//Read a reservation by passenger Id
-	/*@GetMapping("/getByPassengerId")
-	public ReservationEntity findByPassengerId(@RequestParam int passengerId) {
-		return reserveserv.findByPassengerId(passengerId);
-	}*/
+	//Read a reservation by date
+	@GetMapping("/getByDate")
+	public ReservationEntity findByDate(@RequestParam String date) {
+		return reserveserv.findByReservationDate(date);
+	}
 	
 	//Update a reservation
 	@PutMapping("/putReservation")
