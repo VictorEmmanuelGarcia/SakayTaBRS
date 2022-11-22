@@ -16,26 +16,26 @@ public class ReservationService {
 	ReservationRepository reserverepo;
 	
 	//C - Create or insert a reservation
-	public ReservationEntity insertCourse(ReservationEntity reservation) {
+	public ReservationEntity insertReservation(ReservationEntity reservation) {
 		return reserverepo.save(reservation);
 	}
 	
-	//R - Read all records from tbl_course
+	//R - Read all records from tbl_
 	public List<ReservationEntity> getAllReservations(){
 		return reserverepo.findAll();
 	}
 	
-	//R - Read or search a course by Code
-	/*public ReservationEntity findByCode(String code) {
-		if(crepo.findByCode(code)!=null) {
-			return reserverepo.findByCode(code);
+	//R - Read or search a reservation by passenger Id
+	public ReservationEntity findByPassengerId(int passengerId) {
+		if(reserverepo.findByPassengerId(passengerId)!=null) {
+			return reserverepo.findByPassengerId(passengerId);
 		}
 		else {
 			return null;
 		}
-	}*/
+	}
 	
-	//U - Update a course
+	//U - Update a reservation
 	public ReservationEntity putReservation(int reservationId , ReservationEntity newReservationDetails) throws Exception{
 		
 		ReservationEntity reservation = new ReservationEntity();
