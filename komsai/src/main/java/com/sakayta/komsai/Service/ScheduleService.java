@@ -1,5 +1,7 @@
 package com.sakayta.komsai.Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +20,10 @@ public class ScheduleService {
 		return schedRepository.save(schedule);
 	}
 	//Read
+	public List<ScheduleEntity> getAllSchedules(){
+		return schedRepository.findAll();
+	}
+
 	
 	//Update
 	
