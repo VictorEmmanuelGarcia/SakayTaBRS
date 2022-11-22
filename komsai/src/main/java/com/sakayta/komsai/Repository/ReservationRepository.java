@@ -9,5 +9,5 @@ import com.sakayta.komsai.Entity.ReservationEntity;
 public interface ReservationRepository extends JpaRepository<ReservationEntity, Integer>{
 	
 	//di pa sure
-	ReservationEntity findByScheduleId(int scheduleId);
+	ReservationEntity findByPassengerId(int passengerId);
 }
