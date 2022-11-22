@@ -26,14 +26,14 @@ public class ReservationService {
 	}
 	
 	//R - Read or search a reservation by passenger Id
-	public ReservationEntity findByPassengerId(int passengerId) {
+	/*public ReservationEntity findByPassengerId(int passengerId) {
 		if(reserverepo.findByPassengerId(passengerId)!=null) {
 			return reserverepo.findByPassengerId(passengerId);
 		}
 		else {
 			return null;
 		}
-	}
+	}*/
 	
 	//U - Update a reservation
 	public ReservationEntity putReservation(int reservationId , ReservationEntity newReservationDetails) throws Exception{
