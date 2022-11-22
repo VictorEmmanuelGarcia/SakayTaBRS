@@ -1,5 +1,6 @@
 package com.sakayta.komsai.Service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,19 @@ public class ScheduleService {
 	public ScheduleEntity createSchedule(ScheduleEntity schedule) {
 		return schedRepository.save(schedule);
 	}
+	
 	//Read
 	public List<ScheduleEntity> getAllSchedules(){
 		return schedRepository.findAll();
 	}
 
+	public ScheduleEntity findByScheduleDate(Date scheduleDate) {
+		if(schedRepository.findByScheduleDate(scheduleDate) != null) {
+			return schedRepository.findByScheduleDate(scheduleDate);
+		}else {
+			return null;
+		}
+	}
 	
 	//Update
 	
