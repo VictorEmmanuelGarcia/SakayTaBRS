@@ -61,4 +61,15 @@ public class ScheduleService {
 	}
 	
 	//Delete
+	public String deleteSchedule(int scheduleId) {
+		
+		String msg;
+		if(schedRepository.findById(scheduleId) != null) {
+			schedRepository.deleteById(scheduleId);
+			msg = "Schedule ID Number "+ scheduleId +" is successfully deleted!";
+		}else {
+			msg = "Schedule ID Number "+ scheduleId +" is NOT found!";
+		}
+		return msg;
+	}
 }
