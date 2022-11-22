@@ -42,10 +42,10 @@ public class ReservationController {
 	}
 	
 	//Read a reservation by passenger Id
-	@GetMapping("/getByScheduleId")
+	/*@GetMapping("/getByPassengerId")
 	public ReservationEntity findByPassengerId(@RequestParam int passengerId) {
 		return reserveserv.findByPassengerId(passengerId);
-	}
+	}*/
 	
 	//Update a reservation
 	@PutMapping("/putReservation")
