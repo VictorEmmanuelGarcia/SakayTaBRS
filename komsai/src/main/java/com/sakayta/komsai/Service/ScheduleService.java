@@ -27,11 +27,18 @@ public class ScheduleService {
 	}
 
 	public ScheduleEntity findByScheduleDate(Date scheduleDate) {
-		if(schedRepository.findByScheduleDate(scheduleDate) != null) {
+		
+		if(schedRepository.findByScheduleDate(scheduleDate) != null) 
 			return schedRepository.findByScheduleDate(scheduleDate);
-		}else {
+		else 
 			return null;
-		}
+	}
+	public ScheduleEntity findByEndDestination(String endDestination) {
+		
+		if(schedRepository.findByEndDestination(endDestination) != null)
+			return schedRepository.findByEndDestination(endDestination);
+		else
+			return null;
 	}
 	
 	//Update
