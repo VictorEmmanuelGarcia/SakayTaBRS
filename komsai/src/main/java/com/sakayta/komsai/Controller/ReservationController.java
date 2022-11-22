@@ -25,7 +25,7 @@ public class ReservationController {
 	ReservationService reserveserv;
 	
 	@GetMapping("/print")
-	public String printHelloStudent() {
+	public String printResInfo() {
 		return "Reservation Information";
 	}
 	
