@@ -18,6 +18,20 @@ public class PassengerEntity {
 	private String address;
 	private int points;
 	
+	public PassengerEntity() {}
+	
+	public PassengerEntity(int passengerId, String firstName, String lastName, String userName, String passWord,
+			String address, int points) {
+		super();
+		this.passengerId = passengerId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.passWord = passWord;
+		this.address = address;
+		this.points = points;
+	}
+
 	public int getPassengerId() {
 		return passengerId;
 	}
