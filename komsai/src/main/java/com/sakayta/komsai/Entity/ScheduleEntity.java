@@ -17,7 +17,7 @@ public class ScheduleEntity {
 	private int scheduleId;
 	private int busId;
 	private String startLocation;
-	private String busDestination;
+	private String endDestination;
 	private String departureTime;
 	private String arrivalTime;
 	private Date scheduleDate;
@@ -25,13 +25,13 @@ public class ScheduleEntity {
 	
 	public ScheduleEntity() {}
 	
- 	public ScheduleEntity(int scheduleId, int busId, String startLocation, String busDestination, String departureTime,
+ 	public ScheduleEntity(int scheduleId, int busId, String startLocation, String endDestination, String departureTime,
 			String arrivalTime, Date scheduleDate) {
 		super();
 		this.scheduleId = scheduleId;
 		this.busId = busId;
 		this.startLocation = startLocation;
-		this.busDestination = busDestination;
+		this.endDestination = endDestination;
 		this.departureTime = departureTime;
 		this.arrivalTime = arrivalTime;
 		this.scheduleDate = scheduleDate;
@@ -57,12 +57,12 @@ public class ScheduleEntity {
 		this.startLocation = startLocation;
 	}
 
-	public String getBusDestination() {
-		return busDestination;
+	public String getEndDestination() {
+		return endDestination;
 	}
 
-	public void setBusDestination(String busDestination) {
-		this.busDestination = busDestination;
+	public void setEndDestination(String endDestination) {
+		this.endDestination = endDestination;
 	}
 
 	public String getDepartureTime() {
