@@ -4,8 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "passenger_tbl")
 public class PassengerEntity {
 	
 	@Id
@@ -60,11 +62,11 @@ public class PassengerEntity {
 		this.userName = userName;
 	}
 	
-	public String getPassWord() {
+	public String getPassword() {
 		return passWord;
 	}
 	
-	public void setPassWord(String passWord) {
+	public void setPassword(String passWord) {
 		this.passWord = passWord;
 	}
 	
