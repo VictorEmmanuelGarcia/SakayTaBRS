@@ -22,14 +22,14 @@ public class PassengerEntity {
 	
 	public PassengerEntity() {}
 	
-	public PassengerEntity(int passengerId, String firstname, String lastname, String username, String password,
+	public PassengerEntity(int passengerId, String firstName, String lastName, String userName, String passWord,
 			String address, int points) {
 		super();
 		this.passengerId = passengerId;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.username = username;
-		this.password = password;
+		this.firstname = firstName;
+		this.lastname = lastName;
+		this.username = userName;
+		this.password = passWord;
 		this.address = address;
 		this.points = points;
 	}
@@ -42,16 +42,16 @@ public class PassengerEntity {
 		return firstname;
 	}
 	
-	public void setFirstName(String firstname) {
-		this.firstname = firstname;
+	public void setFirstName(String firstName) {
+		this.firstname = firstName;
 	}
 	
 	public String getLastName() {
 		return lastname;
 	}
 	
-	public void setLastName(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastname = lastName;
 	}
 	
 	public String getUserName() {
@@ -66,8 +66,8 @@ public class PassengerEntity {
 		return password;
 	}
 	
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPassword(String passWord) {
+		this.password = passWord;
 	}
 	
 	public String getAddress() {
