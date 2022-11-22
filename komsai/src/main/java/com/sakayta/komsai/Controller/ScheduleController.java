@@ -37,6 +37,11 @@ public class ScheduleController {
 		return schedService.findByScheduleDate(date);
 	}
 	
+	@GetMapping("/getScheduleByEndDestination")
+	public ScheduleEntity getScheduleByEndDestination(String endDestination) {
+		return schedService.findByEndDestination(endDestination);
+	}
+	
 	// Update
 	
 	// Delete
