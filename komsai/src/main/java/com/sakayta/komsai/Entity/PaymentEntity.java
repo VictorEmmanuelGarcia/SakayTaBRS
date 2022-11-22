@@ -1,15 +1,20 @@
 package com.sakayta.komsai.Entity;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "payment_entity")
 public class PaymentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int paymentId;
+	
 	private double amount;
 	private String modeOfPayment;
 	
@@ -20,7 +25,6 @@ public class PaymentEntity {
 	private ReservationEntity reservation;
 	
 	public PaymentEntity() {}
-	
 
 	public PaymentEntity(int paymentId, double amount, String modeOfPayment, PassengerEntity passenger,
 			ReservationEntity reservation) {
