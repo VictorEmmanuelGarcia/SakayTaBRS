@@ -1,5 +1,6 @@
 package com.sakayta.komsai.Controller;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,10 @@ public class ScheduleController {
 		return schedService.getAllSchedules();
 	}
 	
+	@GetMapping("/getScheduleByDate")
+	public ScheduleEntity getScheduleByDate(Date date) {
+		return schedService.findByScheduleDate(date);
+	}
 	
 	// Update
 	
