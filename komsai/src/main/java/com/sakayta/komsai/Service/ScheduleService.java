@@ -3,6 +3,8 @@ package com.sakayta.komsai.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.sakayta.komsai.Entity.PassengerEntity;
+import com.sakayta.komsai.Entity.ScheduleEntity;
 import com.sakayta.komsai.Repository.ScheduleRepository;
 
 @Service
@@ -12,7 +14,9 @@ public class ScheduleService {
 	ScheduleRepository schedRepository;
 	
 	//Create
-	
+	public ScheduleEntity createSchedule(ScheduleEntity schedule) {
+		return schedRepository.save(schedule);
+	}
 	//Read
 	
 	//Update
