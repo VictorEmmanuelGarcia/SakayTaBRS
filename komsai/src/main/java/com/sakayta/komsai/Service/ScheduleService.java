@@ -16,12 +16,12 @@ public class ScheduleService {
 	@Autowired
 	ScheduleRepository schedRepository;
 	
-	//Create
+	//Creates a schedule
 	public ScheduleEntity createSchedule(ScheduleEntity schedule) {
 		return schedRepository.save(schedule);
 	}
 	
-	//Read
+	//Reads a schedule(s)
 	public List<ScheduleEntity> getAllSchedules(){
 		return schedRepository.findAll();
 	}
@@ -41,7 +41,7 @@ public class ScheduleService {
 			return null;
 	}
 	
-	//Update
+	//Update an existing schedule by Id
 	public ScheduleEntity updateSchedule(int scheduleId, ScheduleEntity newScheduleDetails) throws Exception{
 		ScheduleEntity schedule = new ScheduleEntity();
 		
@@ -60,7 +60,7 @@ public class ScheduleService {
 		}
 	}
 	
-	//Delete
+	//Deletes an existing schedule
 	public String deleteSchedule(int scheduleId) {
 		
 		String msg;

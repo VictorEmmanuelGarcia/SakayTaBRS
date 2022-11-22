@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sakayta.komsai.Entity.ReservationEntity;
 import com.sakayta.komsai.Entity.ScheduleEntity;
 import com.sakayta.komsai.Service.ScheduleService;
 
@@ -25,13 +24,13 @@ public class ScheduleController {
 	@Autowired
 	ScheduleService schedService;
 	
-	// Create
+	// Creates a schedule
 	@PostMapping("/postSchedule")
 	public ScheduleEntity createSchedule(@RequestBody ScheduleEntity schedule) {
 		return schedService.createSchedule(schedule);
 	}
 	
-	// Read
+	// Reads a schedule(s)
 	@GetMapping("/getAllSchedules")
 	public List <ScheduleEntity> getAllSchedules() {
 		return schedService.getAllSchedules();
@@ -47,13 +46,13 @@ public class ScheduleController {
 		return schedService.findByEndDestination(endDestination);
 	}
 	
-	// Update
+	// Updates an existing schedule
 	@PutMapping("/putSchedule")
 	public ScheduleEntity updateSchedule(@RequestParam int scheduleId, @RequestBody ScheduleEntity newScheduleDetails) throws Exception {
 		return schedService.updateSchedule(scheduleId, newScheduleDetails);
 	}
 	
-	// Delete
+	// Deletes an existing schedule
 	@DeleteMapping("/deleteSchedule/{id}")
 	public String deleteSchedule(@PathVariable int id) {
 		return schedService.deleteSchedule(id);
