@@ -24,9 +24,9 @@ public class PassengerService {
 		return prepo.findAll();
 	}
 	
-	public PassengerEntity findByUsername(String userN) {
-		if(prepo.findByUserName(userN) != null) {
-			return prepo.findByUserName(userN);
+	public PassengerEntity findByUsername(String username) {
+		if(prepo.findByUsername(username) != null) {
+			return prepo.findByUsername(username);
 		}else {
 			return null;
 		}
@@ -53,13 +53,13 @@ public class PassengerService {
 	
 	//Delete
 	//Not final yet!
-	public String deleteStudent(int id) {
+	public String deletePassenger(int passengerId) {
 		String msg;
-		if(prepo.findById(id) != null) {
-			prepo.deleteById(id);
-			msg = "Passenger ID Number "+ id +" is successfully deleted!";
+		if(prepo.findById(passengerId) != null) {
+			prepo.deleteById(passengerId);
+			msg = "Passenger ID Number "+ passengerId +" is successfully deleted!";
 		}else {
-			msg = "Passenger ID Number "+ id +" is NOT found!";
+			msg = "Passenger ID Number "+ passengerId +" is NOT found!";
 		}
 		return msg;
 	}

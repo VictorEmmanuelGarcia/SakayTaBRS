@@ -7,29 +7,29 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "passenger_tbl")
+@Table(name = "passenger_entity")
 public class PassengerEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int passengerId;
-	private String firstName;
-	private String lastName;
-	private String userName;
-	private String passWord;
+	private String firstname;
+	private String lastname;
+	private String username;
+	private String password;
 	private String address;
 	private int points;
 	
 	public PassengerEntity() {}
 	
-	public PassengerEntity(int passengerId, String firstName, String lastName, String userName, String passWord,
+	public PassengerEntity(int passengerId, String firstname, String lastname, String username, String password,
 			String address, int points) {
 		super();
 		this.passengerId = passengerId;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.userName = userName;
-		this.passWord = passWord;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.username = username;
+		this.password = password;
 		this.address = address;
 		this.points = points;
 	}
@@ -39,35 +39,35 @@ public class PassengerEntity {
 	}
 
 	public String getFirstName() {
-		return firstName;
+		return firstname;
 	}
 	
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstName(String firstname) {
+		this.firstname = firstname;
 	}
 	
 	public String getLastName() {
-		return lastName;
+		return lastname;
 	}
 	
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setLastName(String lastname) {
+		this.lastname = lastname;
 	}
 	
 	public String getUserName() {
-		return userName;
+		return username;
 	}
 	
 	public void setUserName(String userName) {
-		this.userName = userName;
+		this.username = userName;
 	}
 	
 	public String getPassword() {
-		return passWord;
+		return password;
 	}
 	
-	public void setPassword(String passWord) {
-		this.passWord = passWord;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public String getAddress() {

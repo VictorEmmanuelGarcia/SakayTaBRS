@@ -5,5 +5,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.sakayta.komsai.Entity.PassengerEntity;
 
 public interface PassengerRepository extends JpaRepository<PassengerEntity, Integer> {
-	PassengerEntity findByUserName(String userN);
+	PassengerEntity findByUsername(String username);
 	}
