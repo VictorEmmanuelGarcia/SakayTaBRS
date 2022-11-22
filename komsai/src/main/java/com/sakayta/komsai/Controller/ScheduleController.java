@@ -26,7 +26,10 @@ public class ScheduleController {
 	}
 	
 	// Read
-
+	@GetMapping("/getAllSchedules")
+	public List <ScheduleEntity> getAllSchedules() {
+		return schedService.getAllSchedules();
+	}
 	
 	
 	// Update
