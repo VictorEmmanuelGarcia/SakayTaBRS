@@ -31,10 +31,6 @@ public class ScheduleEntity {
 		return scheduleId;
 	}
 
-	public void setScheduleId(int scheduleId) {
-		this.scheduleId = scheduleId;
-	}
-
 	public int getBusId() {
 		return busId;
 	}
