@@ -14,6 +14,15 @@ public class PassengerService {
 	@Autowired
 	PassengerRepository prepo;
 	
+	//Check if user already exists
+	public boolean UserExists(String username) {
+		PassengerEntity passenger = prepo.findByUsername(username);
+		if(passenger == null) {
+			return false;
+		}
+		return true;
+	}
+	
 	//Create
 	public PassengerEntity insertPassenger(PassengerEntity passenger) {
 		return prepo.save(passenger);
