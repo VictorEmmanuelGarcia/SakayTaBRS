@@ -23,7 +23,10 @@ public class PassengerController {
 	PassengerService pservice;
 	
 	@PostMapping("/postPassenger")
-	public PassengerEntity insertPassenger(@RequestBody PassengerEntity passenger) {
+	public PassengerEntity insertPassenger(@RequestBody PassengerEntity passenger) throws Exception{
+		if(pservice.UserExists(passenger.getUserName())){
+			throw new Exception("Username already taken");
+		}
 		return pservice.insertPassenger(passenger);
 	}
 	
