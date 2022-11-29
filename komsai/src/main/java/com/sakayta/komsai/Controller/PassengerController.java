@@ -36,8 +36,8 @@ public class PassengerController {
 	}
 	
 	@GetMapping("/getAllPassenger")
-	public List<PassengerEntity> getAllPassenger(){
-		return pservice.getAllPassenger();
+	public List<PassengerEntity> getAllPassenger(@RequestParam(value = "isDeleted", required = false, defaultValue= "false") boolean isDeleted){
+		return pservice.getAllPassenger(isDeleted);
 	}
 	
 	@PutMapping("/putPassenger/{passengerId}")
