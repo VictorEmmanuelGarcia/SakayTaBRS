@@ -46,7 +46,7 @@ public class PassengerController {
 	}
 	
 	@DeleteMapping("/deletePassenger/{passengerId}")
-	public String deleteCourse(@PathVariable int passengerId) {
+	public String deletePassenger(@PathVariable int passengerId) {
 		return pservice.deletePassenger(passengerId);
 	}
 

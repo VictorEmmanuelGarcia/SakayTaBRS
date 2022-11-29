@@ -18,7 +18,7 @@ import org.hibernate.annotations.Where;
 
 @Entity
 @Table(name = "passenger_entity")
-@SQLDelete(sql = "UPDATE passenger_entity SET deleted = true where passengerId=?")
+@SQLDelete(sql = "UPDATE passenger_entity SET deleted=true WHERE passenger_id=?")
 @FilterDef(name = "deletedPassengerFilter", parameters = @ParamDef(name = "isDeleted", type = "boolean"))
 @Filter(name = "deletedPassengerFilter", condition = "deleted = :isDeleted")
 public class PassengerEntity {
