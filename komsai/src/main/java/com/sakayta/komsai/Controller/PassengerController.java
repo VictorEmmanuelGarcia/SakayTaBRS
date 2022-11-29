@@ -36,8 +36,8 @@ public class PassengerController {
 	}
 	
 	@GetMapping("/getAllPassenger")
-	public List<PassengerEntity> getAllPassenger(){
-		return pservice.getAllPassenger();
+	public List<PassengerEntity> getAllPassenger(@RequestParam(value = "isDeleted", required = false, defaultValue= "false") boolean isDeleted){
+		return pservice.getAllPassenger(isDeleted);
 	}
 	
 	@PutMapping("/putPassenger/{passengerId}")
@@ -46,7 +46,7 @@ public class PassengerController {
 	}
 	
 	@DeleteMapping("/deletePassenger/{passengerId}")
-	public String deleteCourse(@PathVariable int passengerId) {
+	public String deletePassenger(@PathVariable int passengerId) {
 		return pservice.deletePassenger(passengerId);
 	}
 

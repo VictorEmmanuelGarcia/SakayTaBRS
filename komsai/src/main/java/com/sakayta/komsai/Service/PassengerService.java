@@ -3,6 +3,10 @@ package com.sakayta.komsai.Service;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import javax.persistence.EntityManager;
+
+import org.hibernate.Filter;
+import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +17,9 @@ import com.sakayta.komsai.Repository.PassengerRepository;
 public class PassengerService {
 	@Autowired
 	PassengerRepository prepo;
+	
+	@Autowired
+	EntityManager entityManager;
 	
 	//Check if user already exists
 	public boolean UserExists(String userName) {
@@ -29,8 +36,13 @@ public class PassengerService {
 	}
 	
 	//Read
-	public List<PassengerEntity> getAllPassenger(){
-		return prepo.findAll();
+	public List<PassengerEntity> getAllPassenger(boolean isDeleted){
+		Session session = entityManager.unwrap(Session.class);
+		Filter filter = session.enableFilter("deletedPassengerFilter");
+		filter.setParameter("isDeleted", isDeleted);
+		List<PassengerEntity> allPassengers = prepo.findAll();
+		session.disableFilter("deletedPassengerFilter");
+		return allPassengers;
 	}
 	
 	public PassengerEntity findByUsername(String userName) {

@@ -10,13 +10,17 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Filter;
+import org.hibernate.annotations.FilterDef;
+import org.hibernate.annotations.ParamDef;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
 
 @Entity
 @Table(name = "passenger_entity")
-@SQLDelete(sql = "UPDATE passenger_entity SET deleted = true where passengerId=?")
-@Where(clause = "deleted=false")
+@SQLDelete(sql = "UPDATE passenger_entity SET deleted=true WHERE passenger_id=?")
+@FilterDef(name = "deletedPassengerFilter", parameters = @ParamDef(name = "isDeleted", type = "boolean"))
+@Filter(name = "deletedPassengerFilter", condition = "deleted = :isDeleted")
 public class PassengerEntity {
 	
 	@Id
