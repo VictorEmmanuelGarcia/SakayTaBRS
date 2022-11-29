@@ -24,7 +24,7 @@ public class PassengerController {
 	
 	@PostMapping("/postPassenger")
 	public PassengerEntity insertPassenger(@RequestBody PassengerEntity passenger) throws Exception{
-		if(pservice.UserExists(passenger.getUserName())){
+		if(pservice.UserExists(passenger.getUsername())){
 			throw new Exception("Username already taken");
 		}
 		return pservice.insertPassenger(passenger);
@@ -40,14 +40,14 @@ public class PassengerController {
 		return pservice.getAllPassenger();
 	}
 	
-	@PutMapping("/putPassenger")
-	public PassengerEntity putCourse(@RequestParam int passengerid, @RequestBody PassengerEntity newPassengerEntity) throws Exception{
-		return pservice.putPassenger(passengerid, newPassengerEntity);
+	@PutMapping("/putPassenger/{passengerId}")
+	public PassengerEntity putCourse(@PathVariable int passengerId, @RequestBody PassengerEntity newPassengerEntity) throws Exception{
+		return pservice.putPassenger(passengerId, newPassengerEntity);
 	}
 	
-	@DeleteMapping("/deletePassenger/{passengerid}")
-	public String deleteCourse(@PathVariable int passengerid) {
-		return pservice.deletePassenger(passengerid);
+	@DeleteMapping("/deletePassenger/{passengerId}")
+	public String deleteCourse(@PathVariable int passengerId) {
+		return pservice.deletePassenger(passengerId);
 	}
 
 }

@@ -15,8 +15,8 @@ public class PassengerService {
 	PassengerRepository prepo;
 	
 	//Check if user already exists
-	public boolean UserExists(String username) {
-		PassengerEntity passenger = prepo.findByUsername(username);
+	public boolean UserExists(String userName) {
+		PassengerEntity passenger = prepo.findByUsername(userName);
 		if(passenger == null) {
 			return false;
 		}
@@ -33,9 +33,9 @@ public class PassengerService {
 		return prepo.findAll();
 	}
 	
-	public PassengerEntity findByUsername(String username) {
-		if(prepo.findByUsername(username) != null) {
-			return prepo.findByUsername(username);
+	public PassengerEntity findByUsername(String userName) {
+		if(prepo.findByUsername(userName) != null) {
+			return prepo.findByUsername(userName);
 		}else {
 			return null;
 		}
@@ -50,7 +50,7 @@ public class PassengerService {
 			passenger = prepo.findById(passengerId).get();
 			passenger.setFirstName(newPassengerDetails.getFirstName());
 			passenger.setLastName(newPassengerDetails.getLastName());
-			passenger.setUserName(newPassengerDetails.getUserName());
+			passenger.setUsername(newPassengerDetails.getUsername());
 			passenger.setPassword(newPassengerDetails.getPassword());
 			
 			return prepo.save(passenger);
