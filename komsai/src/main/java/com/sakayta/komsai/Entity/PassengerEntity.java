@@ -10,36 +10,43 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
 @Entity
 @Table(name = "passenger_entity")
+@SQLDelete(sql = "UPDATE passenger_entity SET deleted = true where passengerId=?")
+@Where(clause = "deleted=false")
 public class PassengerEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int passengerId;
-	private String firstname;
-	private String lastname;
+	private String firstName;
+	private String lastName;
 	private String username;
 	private String password;
 	private String address;
-	private int points;
+	private boolean deleted = Boolean.FALSE;
+	private double points;
 	
 	@OneToMany(cascade = CascadeType.MERGE)
 	private Set<ReservationEntity> reservation;
 	
 	public PassengerEntity() {}
 	
-	public PassengerEntity(int passengerId, String firstName, String lastName, String userName, String passWord,
-			String address, int points, Set<ReservationEntity> reservation) {
+	public PassengerEntity(int passengerId, String firstName, String lastName, String username, String passWord,
+			String address, double points, Set<ReservationEntity> reservation, boolean deleted) {
 		super();
 		this.passengerId = passengerId;
-		this.firstname = firstName;
-		this.lastname = lastName;
-		this.username = userName;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.username = username;
 		this.password = passWord;
 		this.address = address;
 		this.points = points;
 		this.reservation = reservation;
+		this.setDeleted(deleted);
 	}
 
 	public int getPassengerId() {
@@ -47,35 +54,35 @@ public class PassengerEntity {
 	}
 
 	public String getFirstName() {
-		return firstname;
+		return firstName;
 	}
 	
 	public void setFirstName(String firstName) {
-		this.firstname = firstName;
+		this.firstName = firstName;
 	}
 	
 	public String getLastName() {
-		return lastname;
+		return lastName;
 	}
 	
 	public void setLastName(String lastName) {
-		this.lastname = lastName;
+		this.lastName = lastName;
 	}
 	
-	public String getUserName() {
+	public String getUsername() {
 		return username;
 	}
 	
-	public void setUserName(String userName) {
-		this.username = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	
 	public String getPassword() {
 		return password;
 	}
 	
-	public void setPassword(String passWord) {
-		this.password = passWord;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public String getAddress() {
@@ -86,12 +93,20 @@ public class PassengerEntity {
 		this.address = address;
 	}
 	
-	public int getPoints() {
+	public double getPoints() {
 		return points;
 	}
 	
-	public void setPoints(int points) {
+	public void setPoints(double points) {
 		this.points = points;
+	}
+
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 	
 	
